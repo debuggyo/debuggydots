@@ -1,0 +1,205 @@
+* {
+    font-family: "Zed Sans", "Adwaita Mono", "Inter Nerd Font Propo";
+}
+
+window#waybar {
+    background: transparent;
+    color: #ddd;
+    border-radius: 0;
+}
+
+.module {
+    border-radius: 2rem;
+    margin: 0px 0px;
+}
+
+#clock {
+    font-family: "Zed Sans";
+    font-weight: 900;
+    margin-left: 0px;
+}
+
+#clock.date {
+    font-family: "Adwaita Mono";
+    font-size: 8pt;
+}
+
+#timedate {
+    margin: 1px 0px;
+    margin-right: 10px;
+}
+
+#workspaces button {
+    font-size: 6pt;
+    padding: 0 1px;
+    border-radius: 2rem;
+    color: #ccc;
+    transition: 300ms;
+    transition-timing-function: cubic-bezier(0.05, 0.7, 0.1, 1);
+    font-weight: 500;
+    border: none;
+}
+
+#workspaces button:hover {
+    background: #fff;
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+#workspaces button.empty {
+    color: #555;
+    font-weight: 400;
+    font-size: 4pt;
+}
+
+#workspaces button.active {
+    color: black;
+    background-color: #fff;
+    /* border-top: 1px solid rgba(255, 255, 255, 0.2); */
+    font-weight: 700;
+    padding: 5px 0px;
+    font-size: 10pt;
+}
+
+#tray {
+    padding: 0;
+}
+
+#window {
+    padding: 5px 0px;
+    font-weight: 600;
+}
+
+#custom-notifications {
+    padding: 0px 5px;
+    font-size: 12pt;
+}
+
+#custom-separator {
+    font-size: 0pt;
+    background-color: #333;
+    min-width: 3px;
+    margin: 5px 5px;
+}
+
+window#waybar.empty #window {
+    opacity: 0;
+    margin: 0;
+    font-size: 0;
+}
+
+#custom-emptywindow {
+    opacity: 0;
+    margin: 0;
+    font-size: 0;
+    padding: 0px;
+}
+
+window#waybar.empty #custom-emptywindow {
+    opacity: 1;
+    margin: 10px 0px;
+    margin-top: 16px;
+    font-size: 10pt;
+    font-weight: 600;
+    padding-left: 0px;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    margin: 5px;
+    margin-right: 1px;
+    padding: 10px 5px;
+    border-radius: 2rem;
+    background-color: #111;
+    /* background-color: rgba(0, 0, 0, 0.1); */
+    /* border-top: 1px solid rgba(255, 255, 255, 0.1); */
+    transition: 200ms cubic-bezier(0.19, 1, 0.22, 1);
+    border: 1px solid #444;
+    box-shadow: 0px 0px 0px 1px #000;
+}
+
+.modules-left {
+    padding: 5px;
+}
+
+#pulseaudio-slider {
+    margin: -20px;
+    padding: 0px 0px;
+}
+
+#pulseaudio {
+    opacity: 0;
+    margin: -13px;
+    font-family: Geist Mono NerdFont;
+}
+
+#pulseaudio.icon {
+    font-size: 14pt;
+    opacity: 1;
+    margin: 0px;
+}
+
+#audio:hover #pulseaudio,
+#audio:hover #pulseaudio-slider {
+    opacity: 1;
+    margin: 0px 0px;
+    min-width: 35px;
+    margin-left: -10px;
+}
+
+#audio:hover #pulseaudio:not(.icon) {
+    margin-right: 15px;
+    margin-left: 0px;
+}
+
+#pulseaudio-slider slider {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+#pulseaudio-slider *,
+#audio * {
+    transition: 300ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+#pulseaudio-slider trough {
+    min-width: 0px;
+    min-height: 1px;
+    border-radius: 2rem;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+#audio:hover #pulseaudio-slider trough {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* border-top: 1px solid rgba(255, 255, 255, 0.2); */
+    min-height: 10px;
+    min-width: 100px;
+}
+
+#pulseaudio-slider highlight {
+    background-color: transparent;
+    border-radius: 2rem;
+    border: none;
+}
+
+#audio:hover #pulseaudio-slider highlight {
+    background-color: white;
+}
+
+/* One Window
+window#waybar.solo {
+    background-color: black;
+}
+
+window#waybar.solo .modules-left, window#waybar.solo .modules-right {
+    margin: 0px;
+    background-color: transparent;
+    border-radius: 0px;
+    border: none;
+} */

@@ -1,0 +1,92 @@
+; Notifications
+(deflisten notifs :initial ""
+  `python ~/.config/eww/scripts/notifications.py`)
+
+; Separator
+(defwidget separator []
+    (label :text "" :class "separator"))
+
+; Focused Window Title
+(defpoll windowtitle :interval "0.001s" '~/.config/eww/scripts/windowtitle.sh')
+
+; Workspaces
+(defpoll workspaces :interval "0.01s"
+  "~/.config/eww/scripts/get_ws.sh"
+)
+
+(defwidget workspaces_widget []
+  (box
+    :class "workspaces"
+    :orientation "horizontal"
+    :spacing 0
+    :space-evenly false
+    (for workspace in workspaces
+      (button
+        :class {workspace.active ? "workspace-active" : "workspace"}
+        :onclick "niri msg action focus-workspace ${workspace.name}"
+        :hexpand true
+        "${workspace.name}"
+      ))))
+
+; Time
+(defpoll time :interval "1s" `~/.config/eww/scripts/timedate.sh --time`)
+(defpoll date :interval "1s" `~/.config/eww/scripts/timedate.sh --date`)
+(defwidget timedate []
+    (box :orientation "vertical"
+         :halign "center"
+         :class "timedate"
+         :spacing -5
+         (label :text time :class "time")
+         (label :text date :class "date")))
+
+; Bar Widgets
+(defwidget bar-widgets []
+    (box :orientation "horizontal"
+         :halign "center"
+         :class "bar-widgets"
+         :space-evenly false
+         (workspaces_widget)
+         (separator)
+         windowtitle
+         (separator)
+         (timedate)
+         (separator)
+         (systray :icon-size 16)))
+
+
+; Windows
+(defwindow power-options []
+    :monitor 0
+    :geometry (geometry :x "0px"
+                        :y "0px"
+                        :anchor "center center")
+    :stacking "fg"
+    :namespace "depowery"
+    (box :orientation "horizontal"
+         :halign "center"
+         :class "power-options"
+         :space-evenly false
+         (button :onclick "shutdown now" "󰐥")
+         (button :onclick "reboot" "󰜉")
+         (button :onclick "hyprlock" "󰌾")
+         (button :onclick "pkill niri || loginctl terminate-user $USER" "󰗽")))
+
+(defwindow notifications
+            :monitor 0
+            :geometry (geometry :x "0px"
+                                :y "10px"
+                                :anchor "top center")
+            :stacking "fg"
+            (literal :content notifs))
+
+(defwindow bar
+            :monitor 0
+            :geometry (geometry :y "5px"
+                                :anchor "top center"
+                                :width "100%"
+                                :height "30px")
+            :stacking "fg"
+            :exclusive true
+            :namespace "debarry"
+
+            (bar-widgets))

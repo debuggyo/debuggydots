@@ -1,0 +1,86 @@
+@import "matucolors.css";
+@define-color bg @background;
+@define-color text @on_surface_variant;
+@define-color hover rgba(255, 255, 255, 0.1);
+
+window#waybar {
+    background-color: alpha(@bg, 0.99);
+    border-radius: 20px;
+}
+
+* {
+    transition: 200ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.module {
+    margin: 1px 0px;
+    padding: 0.8rem 3px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    color: @text;
+    background-color: @surface_container;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    margin: 4px 5px;
+    border-radius: 20px;
+}
+
+.modules-right {
+    border-radius: 0px;
+}
+
+#workspaces {
+    background-color: transparent;
+    padding: 0px;
+}
+
+#workspaces button {
+    background-color: @surface_container;
+    font-size: 11pt;
+    padding: 0px;
+    margin: 1px -1px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    font-weight: 400;
+    color: @text;
+    transition: none;
+}
+
+#workspaces button:hover {
+    background-color: @hover;
+}
+
+#workspaces button.active {
+    padding: 5px 0px;
+    background-color: @primary;
+    color: @bg;
+    font-weight: 900;
+}
+
+#workspaces button.empty {
+    color: alpha(@text, 0.5);
+}
+
+#workspaces button.active.empty {
+    color: alpha(@bg, 0.5);
+}
+
+#workspaces button:first-child {
+    border-radius: 20 20 10 10px;
+}
+
+#workspaces button:last-child {
+    border-radius: 10 10 20 20px;
+}
+
+#clock {
+    font-family: "Iosevka";
+    font-weight: 900;
+}
+
+#window {
+    font-size: 10pt;
+}

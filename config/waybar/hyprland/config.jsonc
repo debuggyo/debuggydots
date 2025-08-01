@@ -1,0 +1,28 @@
+[
+  {
+    // Left Bar
+    "name": "leftbar",
+    "layer": "top",
+    "position": "left",
+    "margin": 0,
+    "width": 36,
+    "reload_style_on_change": true,
+
+    "modules-left": ["hyprland/workspaces"],
+    "modules-right": ["clock"],
+    "include": ["~/.config/waybar/hyprland/modules.jsonc"],
+  },
+  {
+    // Right Bar
+    "name": "rightbar",
+    "layer": "top",
+    "position": "right",
+    "margin": 0,
+    "width": 36,
+    "reload_style_on_change": true,
+
+    "modules-left": ["hyprland/window"],
+    "modules-right": ["tray"],
+    "include": ["~/.config/waybar/hyprland/modules.jsonc"],
+  },
+]

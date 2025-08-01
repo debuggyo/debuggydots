@@ -1,0 +1,46 @@
+@import "/home/debuggy/.config/wofi/colors.css";
+
+#window {
+    background-color: alpha(@background, 0.99);
+    border-radius: 20px;
+}
+
+#outer-box {
+    padding: 5px;
+}
+
+#input {
+    border-radius: 20px;
+    background-color: @surface_container;
+    padding: 0px 10px;
+}
+
+#scroll {
+    margin-top: 5px;
+    background-color: @surface_container;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#inner-box {
+    padding: 5px;
+    background-color: transparent;
+}
+
+#entry {
+    border-radius: 15px;
+    transition: 300ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+#entry:selected {
+    background-color: @inverse_on_surface;
+}
+
+.entry image {
+    margin-left: 16px;
+    margin-right: 5px;
+}
+
+expander .entry image {
+    margin-left: 0;
+}

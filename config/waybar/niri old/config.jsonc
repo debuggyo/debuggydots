@@ -1,0 +1,72 @@
+{
+    "layer": "top",
+    "position": "",
+    "margin": 0,
+    "width": 38,
+
+    "modules-left": ["niri/workspaces"],
+    "modules-center": ["niri/window"],
+    "modules-right": ["tray", "group/audio", "battery", "clock", "custom/notifications"],
+
+    "clock": {
+        "format": "{:%I%n%M}"
+    },
+
+    "niri/window": {
+        "rotate": 90
+    },
+
+    "tray": {
+        "spacing": "5"
+    },
+
+    "niri/workspaces": {
+        "persistent-workspaces": {
+            "HDMI-A-1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        },
+        "format": "{icon}",
+        "format-icons": {
+            "default": "󰧟",
+            "active": "󰧞"
+        }
+    },
+
+    "custom/notifications": {
+        "format": "󰂚",
+        "on-click": "swaync-client -t"
+    },
+
+    "group/audio": {
+        "orientation": "vertical",
+        "modules": [
+            "pulseaudio/slider",
+            "pulseaudio",
+            "pulseaudio#icon"
+        ]
+    },
+
+    "pulseaudio": {
+        "rotate": 90
+    },
+
+    "pulseaudio/slider": {
+        "orientation": "vertical"
+    },
+
+    "pulseaudio#icon": {
+        "format": "{icon}",
+        "format-muted": "",
+        "format-icons": {
+            "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+            "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "phone-muted": "",
+            "portable": "",
+            "car": "",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        }
+    }
+}

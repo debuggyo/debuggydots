@@ -1,0 +1,153 @@
+* {
+    font-family: "Geist", "Adwaita Sans", "Inter", "sans-serif";
+}
+
+window#waybar {
+    background: transparent;
+    color: #ddd;
+    border-radius: 0;
+}
+
+.module {
+    border-radius: 2rem;
+    margin: 2px;
+}
+
+#clock {
+    font-family: "GeistMono Nerd Font";
+    font-weight: 800;
+    padding: 2px 0px;
+}
+
+#workspaces button {
+    font-size: 16pt;
+    padding: 0;
+    border-radius: 2rem;
+    color: #eee;
+    transition: 100ms font-weight, 800ms background, 800ms padding;
+    transition-timing-function: cubic-bezier(0.05, 0.7, 0.1, 1);
+    font-weight: 500;
+    border: none;
+}
+
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+#workspaces button.empty {
+    color: #888;
+    font-weight: 400;
+}
+
+#workspaces button.active {
+    color: white;
+    /* background-color: rgba(255, 255, 255, 0.3); */
+    /* border-top: 1px solid rgba(255, 255, 255, 0.2); */
+    font-weight: 700;
+    /* padding: 5px 0px; */
+}
+
+#tray {
+    padding: 5px 0px;
+}
+
+#window {
+    padding: 10px 2px;
+    font-weight: 400;
+}
+
+window#waybar.empty #window {
+    padding: 0 2px;
+}
+
+window#waybar.empty .modules-center {
+    background: transparent;
+}
+
+#custom-notifications {
+    padding: 3px 0px;
+}
+
+.modules-left, .modules-center, .modules-right {
+    margin: 5px 5px;
+    border-radius: 2rem;
+    background-color: black;
+    /* background-color: rgba(0, 0, 0, 0.1); */
+    /* border-top: 1px solid rgba(255, 255, 255, 0.1); */
+    transition: 200ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+#pulseaudio-slider {
+    margin: -20px;
+    padding: 10px 0px;
+}
+
+#pulseaudio {
+    opacity: 0;
+    margin: -20px;
+    font-family: Geist Mono NerdFont;
+}
+
+#pulseaudio.icon {
+    font-size: 16pt;
+    opacity: 1;
+    margin: 0px;
+}
+
+#audio:hover #pulseaudio, #audio:hover #pulseaudio-slider {
+    opacity: 1;
+    margin: 0px;
+    min-height: 35px;
+}
+
+#pulseaudio-slider slider {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+#pulseaudio-slider *, #audio * {
+    transition: 300ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+#pulseaudio-slider trough {
+    min-height: 0px;
+    min-width: 1px;
+    border-radius: 2rem;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+#audio:hover #pulseaudio-slider trough {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* border-top: 1px solid rgba(255, 255, 255, 0.2); */
+    min-width: 15px;
+    min-height: 100px;
+}
+
+#pulseaudio-slider highlight {
+    background-color: transparent;
+    border-radius: 2rem;
+    border: none;
+}
+
+#audio:hover #pulseaudio-slider highlight {
+    background-color: white;
+}
+
+/* One Window
+window#waybar.solo {
+    background-color: black;
+}
+
+window#waybar.solo .modules-left, window#waybar.solo .modules-right {
+    margin: 0px;
+    background-color: transparent;
+    border-radius: 0px;
+    border: none;
+} */

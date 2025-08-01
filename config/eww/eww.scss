@@ -1,0 +1,115 @@
+@use "colors";
+
+// Notifications
+.notifications {
+    min-height: 0px;
+    background-color: transparent;
+}
+
+.notif {
+    background-color: colors.$background;
+    margin: 1px;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.notif image {
+    padding-right: 10px;
+    border-radius: 15px;
+}
+
+.title {
+    font-weight: 900;
+}
+
+.text {
+    font-weight: 200;
+}
+
+// -- Bar
+.bar {
+    background-color: transparent;
+    color: #ddd;
+}
+
+.bar-widgets {
+    background-color: colors.$background;
+    margin: 1 5 1 5px;
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+
+// Separator
+.separator {
+    min-width: 4px;
+    background-color: #333;
+    margin: 0px 10px;
+    border-radius: 2rem;
+}
+
+// Workspace
+.workspace,
+.workspace-active {
+    padding: 0px 0px;
+    font-size: 6pt;
+    background-color: transparent;
+    color: #999;
+    transition: 300ms cubic-bezier(0.19, 1, 0.22, 1);
+    margin: -5px 0px;
+    border-radius: 2rem;
+}
+
+.workspace-active {
+    color: #ddd;
+    font-size: 10pt;
+}
+
+.workspaces:last-child .workspace {
+    background-color: #222;
+}
+
+// Time & Date
+.timedate {
+    margin-top: -5px;
+    margin-bottom: -6px;
+}
+
+.time {
+    font-family: "GeistMono Nerd Font";
+    font-weight: 900;
+    font-size: 10pt;
+}
+
+.date {
+    font-size: 8pt;
+    font-family: "Adwaita Mono";
+}
+
+// Power Options
+.power-options {
+    background: rgba(colors.$background, 0.99);
+    padding: 5px;
+    border-radius: 25px;
+
+    button {
+        background-color: colors.$surface_container;
+        color: colors.$on_background;
+        margin: 2.5px;
+        font-size: 64pt;
+        padding: 70px 100px;
+        border-radius: 10px;
+    }
+
+    button:first-child {
+        border-radius: 20 10 10 20px;
+    }
+
+    button:last-child {
+        border-radius: 10 20 20 10px;
+    }
+
+    button:hover {
+        background-color: colors.$inverse_on_surface;
+    }
+}

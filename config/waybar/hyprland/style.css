@@ -1,0 +1,76 @@
+@define-color bg rgba(0, 0, 0, 0.7);
+@define-color fg #fff;
+@define-color hover rgba(255, 255, 255, 0.1);
+@define-color accent #333;
+
+window#waybar {
+    background-color: @bg;
+}
+
+.leftbar {
+    border-radius: 0px 20px 20px 0px;
+}
+
+.rightbar {
+    border-radius: 20px 0px 0px 20px;
+}
+
+* {
+    transition: 200ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.module {
+    margin: 5px 5px;
+    padding: 10px 2px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+}
+
+.module:hover {
+    background-color: @hover;
+    border-color: @hover;
+}
+
+#workspaces {
+    padding: 5px 0px;
+}
+
+#workspaces:hover {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+#workspaces button {
+    background-color: transparent;
+    font-size: 11pt;
+    padding: 0px;
+    margin: 1px 0px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    font-weight: 400;
+}
+
+#workspaces button:hover {
+    background-color: @hover;
+    border-color: @hover;
+}
+
+#workspaces button.active {
+    padding: 5px 0px;
+    background-color: @accent;
+    border-color: @hover;
+    font-weight: 800;
+}
+
+#workspaces button.empty {
+    opacity: 0.5;
+}
+
+#clock {
+    font-family: "Iosevka";
+    font-weight: 900;
+}
+
+#window {
+    font-size: 10pt;
+}

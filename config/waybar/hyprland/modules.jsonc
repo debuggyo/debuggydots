@@ -1,0 +1,25 @@
+{
+  "clock": {
+    "format": "{:%I%n%M}",
+  },
+
+  "hyprland/window": {
+    "rotate": 270,
+    "icon": true,
+    "icon-size": 16,
+  },
+
+  "tray": {
+    "spacing": 5,
+  },
+
+  "hyprland/workspaces": {
+    "persistent-workspaces": {
+      "HDMI-A-1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    },
+    "format": "{name}",
+    "format-icons": {
+      "default": "",
+    },
+  },
+}

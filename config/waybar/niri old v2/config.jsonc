@@ -1,0 +1,118 @@
+{
+  "layer": "top",
+  "position": "left",
+  "margin": 0,
+  // "width": 38,
+  "reload_style_on_change": true,
+
+  "modules-left": ["niri/workspaces"],
+  "modules-center": ["custom/emptywindow", "niri/window"],
+  "modules-right": ["clock"],
+
+  "group/timedate": {
+    "orientation": "vertical",
+    "modules": ["clock", "clock#date"],
+  },
+
+  "clock": {
+    "format": "{:%I%n%M}",
+  },
+
+  "clock#date": {
+    "format": "{:%a %d %b}",
+  },
+
+  "niri/window": {
+    "rotate": 90,
+    "icon": true,
+    "icon-size": 16,
+  },
+
+  "custom/emptywindow": {
+    "format": "Empty Workspace",
+    "rotate": 90,
+  },
+
+  "tray": {
+    "spacing": 5,
+  },
+
+  "niri/workspaces": {
+    "persistent-workspaces": {
+      "HDMI-A-1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    },
+    "format": "{icon}",
+    "format-icons": {
+      "main": "",
+      "discord": "",
+      "audiorelay": "󱀞",
+
+      "default": "",
+    },
+  },
+
+  "custom/notifications": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<sup></sup>",
+      "none": "",
+      "dnd-notification": "<sup></sup>",
+      "dnd-none": "",
+      "inhibited-notification": "<sup></sup>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<sup></sup>",
+      "dnd-inhibited-none": "",
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true,
+  },
+
+  "custom/separator": {
+    "format": " ",
+  },
+
+  "group/audio": {
+    "orientation": "horizontal",
+    "modules": ["pulseaudio#icon", "pulseaudio", "pulseaudio/slider"],
+  },
+
+  "pulseaudio": {
+    // "rotate": 90
+  },
+
+  "pulseaudio/slider": {
+    "orientation": "horizontal",
+  },
+
+  "pulseaudio#icon": {
+    "format": "{icon}",
+    "format-muted": "",
+    "format-icons": {
+      "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+      "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "phone-muted": "",
+      "portable": "",
+      "car": "",
+      "default": ["󰕿", "󰖀", "󰕾"],
+    },
+  },
+
+  "memory": {
+    "format": " {percentage}%",
+    "interval": 5,
+  },
+
+  "cpu": {
+    "format": " {usage}%",
+    "interval": 5,
+  },
+}
